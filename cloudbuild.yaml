@@ -1,0 +1,12 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud composer environments storage dags import \
+          --environment=${_COMPOSER_ENVIRONMENT} \
+          --location=${_COMPOSER_LOCATION} \
+          --source=./scripts/dags \
+          --destination=dags \
+          --delete-on-replace
