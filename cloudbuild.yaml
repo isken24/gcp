@@ -20,7 +20,7 @@ steps:
     id: DELETION
 
   - name:
-    entrypiont: 'bash'
+    entrypoint: 'bash'
     args:
       - '-c'
       - |
