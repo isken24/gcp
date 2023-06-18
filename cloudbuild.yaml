@@ -1,6 +1,6 @@
 steps:
 
-  - name: 'grc.io/google.com/cloudsdktool/cloud-sdk'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     args: ['echo' , 'Importing new files...']
     id: IMPORT
 
@@ -15,7 +15,7 @@ steps:
           --source=./scripts/DAGs \
           --destination=dags
 
-  - name: 'grc.io/google.com/cloudsdktool/cloud-sdk'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     args: ['echo' , 'Deleting outdated files...']
     id: DELETION
 
