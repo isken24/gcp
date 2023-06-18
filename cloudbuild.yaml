@@ -7,5 +7,5 @@ steps:
         gcloud composer environments storage dags import \
           --environment=${_COMPOSER_ENVIRONMENT} \
           --location=${_COMPOSER_LOCATION} \
-          --source=./scripts/dags \
+          --source=./scripts/DAGs \
           --destination=dags \
