@@ -13,7 +13,7 @@ steps:
           --environment=${_COMPOSER_ENVIRONMENT} \
           --location=${_COMPOSER_LOCATION} \
           --source=./scripts/DAGs \
-          --destination=dags \
+          --destination=dags
 
   - name: 'grc.io/google.com/cloudsdktool/cloud-sdk'
     args: ['echo' , 'Deleting outdated files...']
@@ -25,8 +25,3 @@ steps:
       - '-c'
       - |
         gsutil -m rsync -d -r -x ".*\/.*" ./scripts/DAGs gs://${_COMPOSER_BUCKET}/dags/dags/DAGs
-
-    - name: 'grc.io/google.com/cloudsdktool/cloud-sdk'
-    args: ['echo' , 'Process finished.']
-    id: Finish
-
