@@ -4,15 +4,8 @@ steps:
     args:
       - '-c'
       - |
-        gcloud composer environments storage dags list \
-          --environment=${_COMPOSER_ENVIRONMENT} \
-          --location=${_COMPOSER_LOCATION} \
-          --format="value(uri)" | xargs -I {} gcloud composer environments storage dags delete \
-          --environment=${_COMPOSER_ENVIRONMENT} \
-          --location=${_COMPOSER_LOCATION} \
-          --object={}
         gcloud composer environments storage dags import \
           --environment=${_COMPOSER_ENVIRONMENT} \
           --location=${_COMPOSER_LOCATION} \
           --source=./scripts/dags \
-          --destination=dags
+          --destination=dags \
