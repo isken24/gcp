@@ -19,7 +19,7 @@ steps:
     args: ['echo' , 'Deleting outdated files...']
     id: DELETION
 
-  - name:
+  - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args:
       - '-c'
