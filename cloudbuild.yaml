@@ -1,9 +1,5 @@
 steps:
 
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    args: ['echo' , 'Importing new files...']
-    id: IMPORT
-
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args:
@@ -14,10 +10,7 @@ steps:
           --location=${_COMPOSER_LOCATION} \
           --source=./scripts/DAGs \
           --destination=dags
-
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    args: ['echo' , 'Deleting outdated files...']
-    id: DELETION
+    id: IMPORT
 
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
@@ -25,3 +18,4 @@ steps:
       - '-c'
       - |
         gsutil -m rsync -d -r -x ".*\/.*" ./scripts/DAGs gs://${_COMPOSER_BUCKET}/dags/dags/DAGs
+    id: DELETION
