@@ -10,7 +10,7 @@ steps:
           --location=${_COMPOSER_LOCATION} \
           --source=./scripts/DAGs \
           --destination=dags
-    id: IMPORT
+    id: Importing_new_dags
 
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
@@ -18,4 +18,4 @@ steps:
       - '-c'
       - |
         gsutil -m rsync -d -r -x ".*\/.*" ./scripts/DAGs gs://${_COMPOSER_BUCKET}/dags/dags/DAGs
-    id: DELETION
+    id: Deleting_outdated_dags
