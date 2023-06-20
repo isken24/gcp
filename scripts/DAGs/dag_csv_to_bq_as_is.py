@@ -40,7 +40,7 @@ PYSPARK_JOB_02 = {
         "cluster_name": CLUSTER_NAME
     },
     "pyspark_job": {
-        "main_python_file_uri": f"gs://{SCRIPT_BUCKET_PATH}/{SCRIPT_NAME_01}"
+        "main_python_file_uri": f"gs://{SCRIPT_BUCKET_PATH}/{SCRIPT_NAME_02}"
     }
 }
 
@@ -52,7 +52,7 @@ PYSPARK_JOB_03 = {
         "cluster_name": CLUSTER_NAME
     },
     "pyspark_job": {
-        "main_python_file_uri": f"gs://{SCRIPT_BUCKET_PATH}/{SCRIPT_NAME_01}"
+        "main_python_file_uri": f"gs://{SCRIPT_BUCKET_PATH}/{SCRIPT_NAME_03}"
     }
 }
 
